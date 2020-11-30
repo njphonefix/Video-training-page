@@ -15,10 +15,16 @@
     <div class="header"></div>
     <div class="menu">
       <div id="accordion">
-        <h3>How to Find Properties <i class="fa fa-sort-down"></i> </h3>
-        <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime facere nisi architecto porro expedita soluta eum quia natus, veniam, debitis nam omnis ab sint unde fugit optio doloremque similique consectetur!</p>
-      </div>
+        
+          <h3>How to Find Properties <i class="fa fa-sort-down"></i> </h3>
+          <div>
+          <ul>
+            <li id="test-click">Training 1</li>
+            <li><a id="test-link" href="https://www.youtube.com/embed/1o_zULjL85U" target=""> Training 2</a></li>
+            <li>Training 3</li>
+          </ul>
+          </div>
+        
       <h3>How to Negotiate Contracts <i class="fa fa-sort-down"></i></h3>
         <div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime facere nisi architecto porro expedita soluta eum quia natus, veniam, debitis nam omnis ab sint unde fugit optio doloremque similique consectetur!</p>
@@ -38,8 +44,17 @@
       </div>
       
     </div>
-    <div class="main"></div>
+
+
+    <div class="main">
+      <iframe id="main-video" width="560" height="315" src="https://www.youtube.com/embed/WsuHsp2yVqg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div id="test-output"></div>
+    </div>
+
+
     <div class="footer"></div>
+
+
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
@@ -49,6 +64,25 @@
       collapsible: true
     });
   } );
+
+  $( "#test-click" ).click(function() {
+  $( "iframe" ).css("display","inline");
+
+});
+
+$("#test-link").click(function(e) {
+        e.preventDefault();
+        /* let link = e.target.attributes.href.value; */
+        /* console.log($(this).attr()); */
+        /* $("#main-video").att */
+        let sourceUrl = $(this).attr("href");
+        console.log(sourceUrl);
+        $( "iframe" ).css("display","inline");
+        $("#main-video").attr("src", $(this).attr("href"));
+        
+
+      
+    })
   </script>
 </body>
 </html>
